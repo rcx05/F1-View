@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Data and Cache
+cache/
+trained_models/
+*.csv
+*.json
+
+# OS files
+.DS_Store
+Thumbs.db

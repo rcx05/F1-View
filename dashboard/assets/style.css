@@ -1,0 +1,298 @@
+/* Premium F1 Analytics Glassmorphic Theme */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-color: #08080c;
+    --card-bg: rgba(22, 22, 30, 0.65);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --primary-red: #E10600;
+    --primary-red-hover: #ff2a20;
+    --primary-red-glow: rgba(225, 6, 0, 0.5);
+    --text-main: #f0f0f5;
+    --text-muted: #a0a0b0;
+    --accent-blue: #00d2be;
+    --accent-blue-glow: rgba(0, 210, 190, 0.5);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Rich radial gradient mimicking circuit overhead lighting */
+    background-image: 
+        radial-gradient(circle at 15% 10%, rgba(225, 6, 0, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 85% 90%, rgba(0, 210, 190, 0.1) 0%, transparent 40%),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, var(--bg-color) 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header-title {
+    font-weight: 800;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    background: linear-gradient(135deg, #ffffff 30%, #a0a0b0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(255,255,255,0.1);
+}
+
+.header-title span, .header-title i {
+    color: var(--primary-red);
+    -webkit-text-fill-color: var(--primary-red);
+    text-shadow: 0 0 20px var(--primary-red-glow);
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-blue);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.custom-tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.custom-tab {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    color: var(--text-muted) !important;
+    font-weight: 600 !important;
+    font-size: 1.15rem !important;
+    padding: 18px 30px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+}
+
+.custom-tab:hover {
+    color: var(--text-main) !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    transform: translateY(-2px);
+}
+
+.custom-tab--selected {
+    border-bottom: 3px solid var(--primary-red) !important;
+    color: #fff !important;
+    background-color: rgba(225, 6, 0, 0.08) !important;
+    box-shadow: inset 0 -10px 20px -10px var(--primary-red-glow) !important;
+}
+
+.animated-tab-content {
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 35px 40px;
+    margin-top: 25px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.split-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.content-card h3 {
+    margin-top: 0;
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.content-card h3 i {
+    font-size: 1.5rem;
+}
+
+.content-card p {
+    color: var(--text-muted);
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.custom-button {
+    background: linear-gradient(135deg, var(--primary-red), #ba0500);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 14px 30px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px var(--primary-red-glow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--primary-red-glow);
+    background: linear-gradient(135deg, var(--primary-red-hover), #e10600);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.custom-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px var(--primary-red-glow);
+}
+
+.controls-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* UI Form Elements */
+.custom-dropdown > div, .custom-input {
+    min-width: 170px;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Aggressive override for Dash Dropdowns */
+.custom-dropdown, 
+.custom-dropdown *,
+.Select, 
+.Select *,
+.Select-control,
+.Select-value-label,
+.Select-clear-zone,
+.Select-arrow-zone {
+    background-color: #0b0b10 !important;
+    color: white !important;
+    border-color: rgba(255,255,255,0.2) !important;
+}
+
+.Select-control {
+    border-radius: 10px !important;
+    height: 48px !important;
+}
+
+
+.Select-menu-outer {
+    background-color: #121216 !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    color: white !important;
+}
+
+.Select-option {
+    background-color: transparent !important;
+    color: var(--text-muted) !important;
+    padding: 12px 15px !important;
+}
+
+.Select-option.is-focused, .Select-option.is-selected {
+    background-color: rgba(225, 6, 0, 0.15) !important;
+    color: white !important;
+}
+
+.custom-input {
+    background-color: rgba(10, 10, 15, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 18px;
+    color: white;
+    outline: none;
+    height: 48px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 15px rgba(225,6,0,0.2);
+    background-color: rgba(20, 20, 25, 0.9);
+}
+
+.ai-insight-box {
+    background: linear-gradient(145deg, rgba(0, 210, 190, 0.05), rgba(0,0,0,0.2));
+    border-left: 4px solid var(--accent-blue);
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    box-shadow: inset 0 0 20px rgba(0,210,190,0.02);
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color); 
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2); 
+    border-radius: 5px;
+    border: 2px solid var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-red); 
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .split-panel {
+        grid-template-columns: 1fr;
+    }
+}
